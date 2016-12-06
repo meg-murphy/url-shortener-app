@@ -11,4 +11,9 @@ Rails.application.routes.draw do
      end
    end
 
+   get "/links", to: "links#index"
+
+   get "/links/new", to: "links#new"
+   post "/links", to: "links#create"
+
 end

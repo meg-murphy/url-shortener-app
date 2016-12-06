@@ -1,0 +1,27 @@
+<% if @link.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@link.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+    <ul>
+    <% @link.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+
+<%= form_tag "/links", method: :post do %>
+<form class="form-inline">
+
+  <div class="form-group">
+     <%= text_field_tag :target_url, nil, placeholder: "Add Link", class: "form-control"%>
+  </div>
+
+
+  <div>
+    <%= submit_tag "Submit", class:"btn btn-default"%>
+  </div>
+
+<% end %>
